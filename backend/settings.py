@@ -41,7 +41,7 @@ CORS_ALLOWED_ORIGINS = [
     'http://127.0.0.1:3000',
 ]
 
-CSRF_TRUSTED_ORIGINS = ["*"]
+CSRF_TRUSTED_ORIGINS = ["https://example.com"]
 
 CORS_ALLOW_HEADERS = [
     'accept',
@@ -78,7 +78,6 @@ INSTALLED_APPS = [
     'drf_yasg',
     'whitenoise.runserver_nostatic',
     'corsheaders',
-    'rest_framework',
     'silk',
     'channels',
 ]
