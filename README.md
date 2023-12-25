@@ -27,3 +27,17 @@ To get started with the Django Starter Kit:
    ```bash
    docker compose -f "./build-process/docker-compose-django-backend.yml" up -d --build
    ```
+## Usage
+With the development environment up and running, start coding your Django application without worrying about individual service installations or configurations. Focus on building your application and leave the rest to the Dockerized setup!
+
+## Contribution
+Contributions to enhance the Django Starter Kit are highly encouraged. Feel free to submit pull requests, suggest improvements, or report issues.
+
+## License
+This project is licensed under MIT License, granting you the freedom to use, modify, and distribute the code.
+
+## Acknowledgements
+Special thanks to codewithmuh for creating this incredible Django Starter Kit and simplifying the development process.
+
+## Support
+<a href="https://www.buymeacoffee.com/codewithmuh" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-yellow.png" alt="Buy Me A Coffee" height="41" width="174"></a>
