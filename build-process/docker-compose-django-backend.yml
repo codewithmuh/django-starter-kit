@@ -1,0 +1,101 @@
+version: '3.3'
+services:  
+  redis:
+    image: redis:alpine
+    networks:
+      - elastic
+  elasticsearch:
+    image: elasticsearch:7.14.0
+    volumes:
+      - ./data/elastic:/var/lib/elasticsearch/data
+    environment:
+      - discovery.type=single-node
+    ports:
+      - 9200:9200
+    networks:
+      - elastic
+      
+  postgres:
+    platform: 'linux/amd64'
+    image: postgres:latest
+    container_name: backend-postgres-local
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=postgres
+    ports:
+      - '5432:5432'
+    volumes:
+      - backend-postgres-local:/var/lib/postgresql/data/
+    networks:
+      - elastic
+
+  backend:
+    platform: 'linux/amd64'
+    image: backend-django:local
+    container_name: backend-django-local
+    build:
+      context: ../
+      dockerfile: ./build-process/docker-backend-django/Dockerfile
+      args:
+        APP_ENVIRONMENT: 'Local'
+    volumes:
+      - ../:/home/codewithmuh-backend
+    ports:
+      - '8080:8080'
+    env_file:
+      - ./local.backend.env
+    depends_on:
+      - postgres
+      - redis
+      - elasticsearch
+    networks:
+      - elastic
+
+  celery:
+    platform: 'linux/amd64'
+    image: backend-celery:local
+    container_name: backend-celery-local
+    build: 
+      context: ../
+      dockerfile: ./build-process/docker-backend-celery/Dockerfile
+      args:
+        APP_ENVIRONMENT: 'Local'
+    volumes:
+      - ../:/home/codewithmuh-backend
+    ports:
+      - '5555:5555'
+    env_file:
+      - ./local.backend.env
+    depends_on:
+      - redis
+    environment:
+      - C_FORCE_ROOT="true"
+    networks:
+      - elastic
+
+  celery-beat:
+    platform: 'linux/amd64'
+    image: backend-beat:local
+    container_name: backend-beat-local
+    build:
+      context: ../
+      dockerfile: ./build-process/docker-backend-beat/Dockerfile
+      args:
+        APP_ENVIRONMENT: 'Local'
+    volumes:
+      - ../:/home/codewithmuh-backend
+    env_file:
+      - ./local.backend.env
+    depends_on:
+      - redis
+    networks:
+      - elastic
+
+volumes:
+  backend-postgres-local:
+  esdata:
+
+networks:
+  elastic:
+    driver: bridge
