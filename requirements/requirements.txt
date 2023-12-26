@@ -23,6 +23,7 @@ django-nine==0.2.7
 django-redis==5.4.0
 django-silk==5.0.4
 django-timezone-field==4.2.3
+django-user-agents==0.4.0
 djangorestframework==3.14.0
 djangorestframework-simplejwt==5.3.1
 drf-yasg==1.21.7
@@ -59,8 +60,10 @@ setuptools==69.0.3
 six==1.16.0
 sqlparse==0.4.4
 tzdata==2023.3
+ua-parser==0.18.0
 uritemplate==4.1.1
 urllib3==2.0.7
+user-agents==2.2.0
 vine==5.1.0
 virtualenv==20.24.5
 wcwidth==0.2.12
