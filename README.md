@@ -32,9 +32,17 @@ To get started with the Django Starter Kit:
 ## Usage
 With the development environment up and running, start coding your Django application without worrying about individual service installations or configurations. Focus on building your application and leave the rest to the Dockerized setup!
 
-## Contribution
-Contributions to enhance the Django Starter Kit are highly encouraged. Feel free to submit pull requests, suggest improvements, or report issues.
 
+## Contribution Guidelines
+
+Contributions to the Django Starter Kit are highly encouraged! Follow these guidelines to contribute:
+
+1. Fork the repository.
+2. Create a new branch: `git checkout -b feature/your-feature`.
+3. Make your changes and commit them: `git commit -m 'Add your feature'`.
+4. Push to the branch: `git push origin feature/your-feature`.
+5. Submit a pull request!
+6. 
 ## License
 This project is licensed under MIT License, granting you the freedom to use, modify, and distribute the code.
 
