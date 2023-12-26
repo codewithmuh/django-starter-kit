@@ -1,5 +1,7 @@
 # Django Starter Kit: Simplifying Development with Docker, Celery, ElasticSearch, PostgreSQL, and Swagger
 
+![aws cost (7)](https://github.com/codewithmuh/django-starter-kit/assets/51082957/71b37d29-ec83-4063-bbcd-7afe11bebc0a)
+
 Welcome to the Django Starter Kit, a comprehensive setup designed to streamline Django development using Docker, Celery, ElasticSearch, PostgreSQL, and Swagger.
 
 ## Overview
