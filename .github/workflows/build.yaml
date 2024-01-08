@@ -23,6 +23,6 @@ jobs:
           args: >
             -Dsonar.projectKey=django-starter-kit
             -Dsonar.organization=rashiddaha
-            # -Dsonar.sources=.  # Adjust the source directory if necessary
-          env:
-            SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+            -Dsonar.sources=.  # Adjust the source directory if necessary
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
