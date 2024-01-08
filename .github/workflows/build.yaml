@@ -19,8 +19,10 @@ jobs:
       - name: SonarCloud Scan
         uses: SonarSource/sonarcloud-github-action@master
         with:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+          projectBaseDir: './'  # Assuming the project is in the root directory
           args: >
             -Dsonar.projectKey=django-starter-kit
             -Dsonar.organization=rashiddaha
+            # -Dsonar.sources=.  # Adjust the source directory if necessary
+          env:
+            SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
