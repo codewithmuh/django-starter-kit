@@ -24,7 +24,7 @@ This repository contains a pre-configured development environment for Django-bas
 To get started with the Django Starter Kit:
 
 1. **Clone the Repository**: `git clone https://github.com/codewithmuh/django-starter-kit.git`
-2. **Configure Environment Variables**: Modify the `.env` file to customize settings according to your requirements.
+2. **Configure Environment Variables**: Modify the `local.backend.env` available in build-process folder , we will use this file to customize settings according to your requirements.
 3. **Run Setup Command**:
    ```bash
    docker compose -f "./build-process/docker-compose-django-backend.yml" up -d --build
