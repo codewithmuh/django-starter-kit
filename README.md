@@ -36,6 +36,7 @@ With the development environment up and running, start coding your Django applic
 ## Contribution Guidelines
 
 Contributions to the Django Starter Kit are highly encouraged! Follow these guidelines to contribute:
+### Not: Make sure the Docker desktop is installed and running on your system. You can download it from the official website of dockerhub.
 
 1. Fork the repository.
 2. Create a new branch: `git checkout -b feature/your-feature`.
